@@ -32,16 +32,17 @@ pause on
 
   ** LINUX: Enter name of root directory and name of this do file.
 
-local pathname = `""/home/joanna/Dropbox/Projects/proprioRCT/src/code/stats/""'
+local pathname = `""/home/joanna/Dropbox/Projects/proprioRCT_repo/""'
 local dofilename = `""script.do""'
 
   ** Open a time- and date-stamped log file and copy a time- and date-stamped
   ** do file and data file to the log file directory.
 
 local pathandnameofdofile = `"""' + `pathname' + `dofilename' + `"""'
-local pathoflogfilesname = `"""' + `pathname' + "log-files/" + `"""'
-local pathofdatafilesname = `"""' + `pathname' + "data/" + `"""'
-local pathofgraphfilesname = `"""' + `pathname' + "graphs/" + `"""'
+local pathoflogfilesname = `"""' + `pathname' + "data/proc/" + `"""'
+local pathofrawdatafilesname = `"""' + `pathname' + "data/raw/" + `"""'
+local pathofprocdatafilesname = `"""' + `pathname' + "data/proc/" + `"""'
+local pathofgraphfilesname = `"""' + `pathname' + "data/proc/" + `"""'
 local cdate = "c(current_date)"
 local ctime = "c(current_time)"
 local ctime = subinstr(`ctime',":","h",1)
@@ -55,7 +56,7 @@ cd `pathoflogfilesname'
 
 ********** COMBINE DATASETS, TIDY UP **********
 
-cd `pathofdatafilesname'
+cd `pathofprocdatafilesname'
 
 drop _all
 insheet using "data_recov.csv", clear
@@ -64,11 +65,15 @@ quietly gen mid = _n
 move mid id
 save recovery.dta, replace
 
+cd `pathofrawdatafilesname'
+
 drop _all
 import excel "proprio_funct_covar_measures.xlsx", firstrow
 drop if id==18 /* Sub 18 withdrew from study: withdraw data */
 quietly gen mid = _n
 move mid id
+
+cd `pathofprocdatafilesname'
 save function.dta, replace
 
 use function.dta, clear

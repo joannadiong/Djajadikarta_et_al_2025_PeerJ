@@ -15,7 +15,7 @@ matplotlib.rcParams.update({'font.size': 5})
 # session = 'pre'
 
 def gen_data():
-    path = Path('/home/joanna/Dropbox/Projects/proprioRCT')
+    path = Path('..')
     path_raw = path / 'data' / 'raw'
     path_proc = path / 'data' / 'proc'
     file = 'allmotor_long.xlsx'
@@ -59,8 +59,8 @@ def write_to_csv(df, path_proc):
 def _gen_id_dir(id_list: list):
     """Create subject folders for processed data"""
     for id in id_list:
-        if not os.path.exists(os.path.join('..', '..', '..', 'data', 'proc', 'sub' + str(id))):
-            os.mkdir(os.path.join('..', '..', '..', 'data', 'proc', 'sub' + str(id)))
+        if not os.path.exists(os.path.join('..', 'data', 'proc', 'sub' + str(id))):
+            os.mkdir(os.path.join('..', 'data', 'proc', 'sub' + str(id)))
 
 def _set_negative_va_to_zero(df: pd.DataFrame):
     """Set all negative voluntary activations to zero"""
