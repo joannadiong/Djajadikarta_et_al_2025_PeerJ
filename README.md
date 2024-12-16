@@ -1,19 +1,19 @@
 ## Title
 
-A home-based step-training intervention did not change ankle proprioception and muscle performance in people with multiple sclerosis: Exploring secondary outcomes from a randomised controlled trial
+Proprioception and muscle performance unchanged by in-home step training in multiple sclerosis: secondary outcomes analysis
 
-Zoë J Djajadikarta^1^, Siobhan C Dongés^1^, Joanna Diong^1,2^, Phu D Hoang^1,3^, David S Kennedy^4^, Stephen R Lord^1,5^, Janet L Taylor^6^, Simon C Gandevia^1,5^
+Zoë J Djajadikarta^1^, Siobhan C Dongés^1^, Joanna Diong^1,2^, Phu D Hoang^1,3^, David S Kennedy^1,4,5^, Jasmine C Menant^1,3^, Stephen R Lord^1,3^, Janet L Taylor^1,6^, Simon C Gandevia^1,3^
 
 1. Neuroscience Research Australia, Sydney, NSW, Australia
 2. School of Medical Sciences, Faculty of Medicine and Health, The University of Sydney, Sydney, NSW, Australia
-3. Multiple Sclerosis (MS) Australia, Sydney, NSW, Australia
+3. University of New South Wales, Sydney, Australia
 4. Graduate School of Health, Physiotherapy, University of Technology Sydney
-5. University of New South Wales, Sydney, Australia
+5. Motion and Mobility Research laboratory, University of Victoria, Victoria, Canada
 6. Edith Cowan University, Joondalup, Perth, WA, Australia
 
 ## Suggested citation
 
-Djajadikarta ZJ, Dongés SC, Diong J, Hoang PD, Kennedy DS, Lord SR, Taylor JL, Gandevia SC (2022)  A home-based step-training intervention did not change ankle proprioception and muscle performance in people with multiple sclerosis: Exploring secondary outcomes from a randomised controlled trial. **[ADD JOURNAL]**
+Djajadikarta ZJ, Dongés SC, Diong J, Hoang PD, Kennedy DS, Menant JC, Lord SR, Taylor JL, Gandevia SC (2025) Proprioception and muscle performance unchanged by in-home step training in multiple sclerosis: secondary outcomes analysis. PeerJ. 
 
 ## Data
 
@@ -30,7 +30,7 @@ The Stata script calls Python-generated _data_recov.csv_ and raw data _proprio_f
 
 Run Python script, then run Stata script. 
 
-Code files were written by Joanna Diong (Python v3.8, Stata v16). 
+Code files were written by Joanna Diong (Python v3.11, Stata v18). 
 
 ### Python
 
@@ -51,7 +51,7 @@ Code files in **bin/**:
 
 ### Running Python code
 
-In _proc.py_ line 18, set file path to local directory
+In _proc.py_ line 18, file path is set to current directory; update as required.
 
 Run _script.py_
 
@@ -66,13 +66,15 @@ Code files in **bin/**:
 
 ### Running Stata code
 
-In _script.do_ lines 31-34, set file paths to local directory.
+In _script.do_ lines 29 and 30, set file paths for project and DO file to current directory.
 
-Paths are currently set for Linux operating system. They will need to be updated for Windows, or for different project locations on different machines. 
+Paths are currently set for Linux or Mac operating systems using forward slashes `/`. 
+They will need to be updated for Windows using backward slashes `\`, 
+or for different project locations on different machines. 
 
-Place graph scheme _scheme-lean3.scheme_ in Stata's **ado/base/s/**
+Place graph scheme _scheme-lean3.scheme_ in Stata's **ado/base/s/**.
 
-Uncomment lines 49, 50, 241 to save a log file in **data/proc/**.
+Uncomment lines 47, 48, 248 to save a log file in **data/proc/**.
 
 Run _script.do_
 
