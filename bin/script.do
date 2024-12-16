@@ -9,16 +9,10 @@
 ** Data from Spike files were processed in Python, and cleaned data are
 ** analysed in Stata.
 
-** DO file Editor: use Andale Mono, font size 11 to display underscores
-
-** For specifying RCT variables in -ivregress-, see:
-** https://www.statalist.org/forums/forum/general-stata-discussion/general/1356518-ivregress-and-complier-average-causa-effect-cace-analysis */
-** https://www.youtube.com/watch?v=lbnswRJ1qV0
-
 
 ********** PRELIMINARIES ********** 
 
-version 16
+version 18
 clear all
 clear matrix
 drop _all
@@ -33,7 +27,7 @@ pause on
   ** LINUX: Enter name of root directory and name of this do file.
 
 local pathname = `""/home/joanna/Dropbox/Projects/proprioRCT_repo/""'
-local dofilename = `""script.do""'
+local dofilename = `""/bin/script.do""'
 
   ** Open a time- and date-stamped log file and copy a time- and date-stamped
   ** do file and data file to the log file directory.
@@ -220,6 +214,10 @@ foreach var of varlist edss ipeq {
 
 replace speed_10mwt = 10 / speed_10mwt 
 replace step_time = step_time / (60 * 60)
+
+* Rescale adherence from units of hours to proportion of total:
+* total exercise time is 6 months = 52/2 weeks of 120 min = 2 hrs per week
+replace step_time = step_time / (52 / 2 * 2)
 
 foreach var of varlist bv_torque bv_twitch bv_va /// 
                        fv_torque fv_twitch fv_va /// 
