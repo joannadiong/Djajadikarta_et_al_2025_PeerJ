@@ -2,7 +2,7 @@
 
 Proprioception and muscle performance unchanged by in-home step training in multiple sclerosis: secondary outcomes analysis
 
-Zoë J Djajadikarta^1^, Siobhan C Dongés^1^, Joanna Diong^1,2^, Phu D Hoang^1,3^, David S Kennedy^1,4,5^, Jasmine C Menant^1,3^, Stephen R Lord^1,3^, Janet L Taylor^1,6^, Simon C Gandevia^1,3^
+Zoë J Djajadikarta<sup>1</sup>, Siobhan C Dongés<sup>1</sup>, Joanna Diong<sup>1,2</sup>, Phu D Hoang<sup>1,3</sup>, David S Kennedy<sup>1,4,5</sup>, Jasmine C Menant<sup>1,3</sup>, Stephen R Lord<sup>1,3</sup>, Janet L Taylor<sup>1,6</sup>, Simon C Gandevia<sup>1,3</sup>
 
 1. Neuroscience Research Australia, Sydney, NSW, Australia
 2. School of Medical Sciences, Faculty of Medicine and Health, The University of Sydney, Sydney, NSW, Australia
